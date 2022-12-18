@@ -1,0 +1,44 @@
+<%- include("../layouts/header.ejs") %> <%- include("../layouts/navbar.ejs") %>
+<form id="otp" class="otpform pt-5" style="display: none" class="col-md px-5">
+    <div class="form-group">
+        <input
+            type="text"
+            class="form-control"
+            id="otpinp"
+            placeholder=""
+            name="otpvalue"
+        />
+        <label class="mb-2 mt-2">Enter OTP for verification</label>
+    </div>
+    <div class="text-center">
+        <!-- / button to trigger modal  -->
+        <a
+            href="#myModal"
+            class="btn btn-danger"
+            data-toggle="modal"
+            id="otpbtn"
+            >verify</a
+        >
+    </div>
+</form>
+<div id="myModal" class="modal fade">
+    <div class="modal-dialog modal-confirm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <!-- <div class="icon-box">
+                  <i class="material-icons"></i>
+              </div> -->
+            </div>
+            <div class="modal-body">
+                <p class="text-center responsetext h5"></p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-success btn-block" data-dismiss="modal">
+                    OK
+                </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<%- include("../layouts/footer.ejs") %>

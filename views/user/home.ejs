@@ -1,0 +1,182 @@
+<%- include("../layouts/userheader.ejs") %> 
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <%- include("../layouts/navbar.ejs") %>
+  <% if(banners.length > 0){
+    for(let i=0; i<banners.length;i++ ){%>
+  <div id="carouselExampleIndicators" class=" carousel-fade carousel slide" data-ride="carousel">
+    <ol class="carousel-indicators">
+      <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+      <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+    </ol>
+    <div class="carousel-inner">
+     
+      <div class="carousel-item active">
+       <img class="d-block w-100  img-fluid " src="/banners/<%=banners[i].banerimage[0] %>" alt="First slide" > </a>
+      </div>
+      <div class="carousel-item">
+        <a href=" /women">  <img class="d-block w-100  img-fluid" src="/banners/<%=banners[i].banerimage[1] %>" alt="Second slide"></a>
+      </div>
+      <div class="carousel-item">
+        <a href=" /kids">  <img class="d-block w-100  img-fluid" src="/banners/<%=banners[i].banerimage[2] %>" alt="Third slide"></a>
+      </div>
+      <%}}%>
+    </div>
+    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+      <span class="sr-only">Previous</span>
+    </a>
+    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+      <span class="sr-only">Next</span>
+    </a>
+  </div>
+
+<!-- New arrivals start -->
+  <section class="product spad mt-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <ul class="filter__controls">
+                    
+                    <li class="text-dark">New Arrivals</li>
+                   
+                </ul>
+            </div>
+        </div>
+       
+        <div class="row product__filter">
+          <% products.forEach(x=>{ %>
+            <div class="col-lg-3 col-md-6 col-sm-6 col-md-6 col-sm-6  mix new-arrivals">
+             
+                <div class="product__item ">
+                  
+                    <div class="product__item__pic set-bg " data-setbg="/uploadedimages/<%=x.image[0] %>">
+                        <span class="label">New</span>
+                        <ul class="product__hover">
+                            <li><a href="#"><img src="img/icon/heart.png" alt=""></a></li>
+                            
+                            <li><a href="#"><img src="img/icon/search.png" alt=""></a></li>
+                        </ul>
+                    </div>
+                    <div class="product__item__text">
+                        <h6><%=x.title %></h6>
+                        <a href="#" class="add-cart">+ Add To Cart</a>
+                        <p class="text-decoration-line-through"><%=x.price %></p>
+                        <h5><%=x.offer %></h5>
+                        
+                    </div>
+                   
+                </div>
+                
+            </div>
+            <% }) %>
+           
+            
+        </div>
+        
+    </div>
+  </section>
+  <!-- New arrivals End -->
+
+
+
+<div class="container">
+    <div class="row">
+        <div class="col-12 col-sm-6 col-md-4 "  data-aos="zoom-in">
+            <h3 class="text-center">MEN</h3>
+              <img src="/img/banner/man.jpg" alt="">
+              
+        </div>
+        <div class="col-12 col-sm-6 col-md-4"  data-aos="zoom-in">
+            <h3 class="text-center">KIDS</h3>
+            <img src="/img/banner/kid.jpg" alt="">
+            
+      </div>
+      <div class="col-12 col-sm-6 col-md-4"  data-aos="zoom-in">
+        <h3 class="text-center">WOMEN</h3>
+        <img src="/img/banner/woman-category.jpg" alt="">
+        
+  </div>
+
+    </div>
+</div>
+<!-- ......footer......... -->
+<footer class="footer mt-5">
+  <div class="container">
+      <div class="row">
+          <div class="col-lg-3 col-md-6 col-sm-6">
+              <div class="footer__about">
+                  <div class="footer__logo mt-3">
+                      <a class="text-decoration-none" href="#"><h3 class="text-white">MK STUDIO</h3></a>
+                  </div>
+                  <p> Fire your mind with idea and walk like
+                    a king along with MK</p>
+                  <a href="#"><img src="img/payment.png" alt=""></a>
+              </div>
+          </div>
+          <div class="col-lg-2 offset-lg-1 col-md-3 col-sm-6">
+              <div class="footer__widget">
+                  <h6 class="ms-4 mt-3">Shopping</h6>
+                  <ul  class="text-decoration-none">
+                      <li><a class="text-decoration-none" href="#">Clothing Store</a></li>
+                      <li><a class="text-decoration-none" href="#">Trending Shoes</a></li>
+                      <li><a class="text-decoration-none" href="#">Accessories</a></li>
+                      <li><a class="text-decoration-none" href="#">Sale</a></li>
+                  </ul>
+              </div>
+          </div>
+          <div class="col-lg-2 col-md-3 col-sm-6">
+              <div class="footer__widget">
+                  <h6 class="ms-4 mt-3">Shopping</h6>
+                  <ul >
+                      <li ><a class="text-decoration-none" href="#">Contact Us</a></li>
+                      <li><a class="text-decoration-none" href="#">Payment Methods</a></li>
+                      <li><a class="text-decoration-none" href="#">Delivary</a></li>
+                      <li><a class="text-decoration-none" href="#">Return & Exchanges</a></li>
+                  </ul>
+              </div>
+          </div>
+          <div class="col-lg-3 offset-lg-1 col-md-6 col-sm-6">
+              <div class="footer__widget">
+                  <h6 class="ms-4 mt-3">NewLetter</h6>
+                  <div class="footer__newslatter">
+                      <p>Get Beautified with us. Join as an Angel and make your foots smile</p>
+                      <a href="/register"><button type="button" class="btn btn-outline-light ms-5">SIGN UP</button></a>
+                  </div>
+              </div>
+          </div>
+      </div>
+      <div class="row">
+          <div class="col-lg-12 text-center">
+              <div class="footer__copyright__text">
+                  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+                  <p>Copyright ©
+                     2022
+                      All rights reserved | Made with <i class="fa fa-heart-o"
+                      aria-hidden="true"></i> by <a href="https://www.instagram.com/bugle_niger/" target="_blank">Alan Mathew</a>
+                  </p>
+                  <!-- Link back to Colorlib can't be removed. Template is licensed under CC BY 3.0. -->
+              </div>
+          </div>
+      </div>
+  </div>
+</footer>
+<!-- Footer Section End -->
+
+
+
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>
+ <%- include("../layouts/userfooter.ejs") %>
